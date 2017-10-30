@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: ../h2-1.4.195.jar
+

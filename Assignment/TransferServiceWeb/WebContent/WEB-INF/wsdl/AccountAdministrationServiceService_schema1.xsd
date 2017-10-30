@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.assignment.igenico.com/" version="1.0" xmlns:tns="http://service.assignment.igenico.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="TransferServiceException" type="tns:TransferServiceException"/>
+
+  <xs:element name="createAccount" type="tns:createAccount"/>
+
+  <xs:element name="createAccountResponse" type="tns:createAccountResponse"/>
+
+  <xs:element name="getBalance" type="tns:getBalance"/>
+
+  <xs:element name="getBalanceResponse" type="tns:getBalanceResponse"/>
+
+  <xs:element name="transferBalance" type="tns:transferBalance"/>
+
+  <xs:element name="transferBalanceResponse" type="tns:transferBalanceResponse"/>
+
+  <xs:complexType name="getBalance">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="accountNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:account"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="account">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element name="customerId" type="xs:int"/>
+      <xs:element minOccurs="0" name="openingBalance" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="totalBalance" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TransferServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+      <xs:element minOccurs="0" name="messages" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transferBalance">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="transferRequest" type="tns:transferRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transferRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="destinationAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="transferBalance" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transferBalanceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAccount">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="account" type="tns:account"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAccountResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
