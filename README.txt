@@ -17,3 +17,6 @@ Installing
 2) Start Server
 3) ADD TransferServiceEAR to server
 4) Import WSDL into soapUi and create soapui project for testing
+
+Test Results
+Please refer TestResults.doc for tested scenarios.
