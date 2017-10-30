@@ -1,5 +1,0 @@
-I have developed soap webservice with below process.
-
-1) Import existing TransferServiceImplementation, TransferServiceWeb, TransferServiceEAR projects in IDE.
-2) I have used websphere 8.5 server for deployment and H2 database connection.
-3) Script1.sql is included in TransferServiceImplementation porject which will create table required for running this project.
